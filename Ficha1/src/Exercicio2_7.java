@@ -1,7 +1,7 @@
 import java.time.Duration;
 import java.time.LocalTime;
 
-public class Exercicio1_7 {
+public class Exercicio2_7 {
     
     // public long factorial(int num){
     //     int resultado = 1;
@@ -12,7 +12,7 @@ public class Exercicio1_7 {
     // }
 
     public long tempoGasto(){
-        Exercicio1_6 aux = new Exercicio1_6();
+        Exercicio2_6 aux = new Exercicio2_6();
         LocalTime tempo_inicial = LocalTime.now();
         aux.factorial(5000);
         LocalTime tempo_final = LocalTime.now();
@@ -21,7 +21,7 @@ public class Exercicio1_7 {
     }
 
     public static void main(String[] args){
-        Exercicio1_7 exercicio = new Exercicio1_7();
+        Exercicio2_7 exercicio = new Exercicio2_7();
         System.out.println("A sua máquina demorou " + exercicio.tempoGasto() + " milissegundos a calcular o fatorial do número 5000");
     }
 }

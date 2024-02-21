@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio1_3 {
+public class Exercicio2_3 {
     
     public String criaDescricaoConta(String nome, double saldo){
         return "Nome -> " + nome + ", Saldo -> " + saldo;
@@ -11,8 +11,8 @@ public class Exercicio1_3 {
         System.out.print("Insira um nome: ");
         String nome = input.next();
         System.out.print("Insira o saldo: ");
-        double saldo = input.nextDouble();
-        Exercicio1_3 exercicio = new Exercicio1_3();
+        int saldo = input.nextInt();
+        Exercicio2_3 exercicio = new Exercicio2_3();
         System.out.println(exercicio.criaDescricaoConta(nome, saldo));
         input.close();
     }

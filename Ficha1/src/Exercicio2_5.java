@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio1_5 {
+public class Exercicio2_5 {
 
     public String media(int a, int b){
         return "Números por ordem decrescente -> " + Math.max(a, b) + ", " + Math.min(a,b) + "     Média -> " + (a+b)/2;
@@ -12,7 +12,7 @@ public class Exercicio1_5 {
         int num1 = input.nextInt();
         System.out.print("Insira outro número: ");
         int num2 = input.nextInt();
-        Exercicio1_5 exercicio = new Exercicio1_5();
+        Exercicio2_5 exercicio = new Exercicio2_5();
         System.out.println(exercicio.media(num1, num2));
         input.close();
     }
