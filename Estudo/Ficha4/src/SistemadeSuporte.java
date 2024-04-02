@@ -17,8 +17,11 @@ public class SistemadeSuporte {
     public SistemadeSuporte(SistemadeSuporte mySistemadeSuporte){
         this.setPedidos(mySistemadeSuporte.getPedidos());
     }
-    public ArrayList <PedidodeSuporte> getPedidos(){
-        return this.pedidos;
+    //public ArrayList <PedidodeSuporte> getPedidos(){
+    //    return this.pedidos;
+    //}
+    public ArrayList<PedidodeSuporte> getPedidos() {
+        return new ArrayList<PedidodeSuporte>(this.pedidos);
     }
     public void setPedidos(ArrayList <PedidodeSuporte> pedidos){
         this.pedidos = new ArrayList<PedidodeSuporte>();
@@ -44,7 +47,7 @@ public class SistemadeSuporte {
     }
 
     public void inserePedido(PedidodeSuporte pedido){
-        this.getPedidos().add(pedido);
+        this.pedidos.add(pedido);
     }
 
     public PedidodeSuporte procuraPedido(String user, LocalDateTime data){
@@ -55,6 +58,16 @@ public class SistemadeSuporte {
         return res;
     }
 
+    public PedidodeSuporte procuraPedido2(String user, LocalDateTime data) {   //com iterador externo
+        PedidodeSuporte res = new PedidodeSuporte();
+        Iterator<PedidodeSuporte> it = this.getPedidos().iterator();
+        while(it.hasNext()){
+            res = it.next();
+            if(user.equals(res.getAutor()) && data.equals(res.getSubmetido())) return res;
+        }
+        return res;
+    }
+    
     public void resolvePedido(PedidodeSuporte pedido, String tecnico, String info){
         int id = 0;
         for(PedidodeSuporte l: this.getPedidos()){
@@ -63,7 +76,7 @@ public class SistemadeSuporte {
                 novo.setSolucionador(tecnico);
                 novo.setConcluido(LocalDateTime.now());
                 novo.setInformacao(info);
-                this.getPedidos().set(id, novo);
+                this.pedidos.set(id, novo);
                 break;
             }
             id++;
